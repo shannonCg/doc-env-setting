@@ -1,7 +1,7 @@
 # 安裝docker v19.03 步驟
-## 執行安裝docker_19.03的script 1/4
+## 執行安裝docker 19.03的script 1/4
 ```
-$./docker_19.03_install.md
+$./docker_19.03_install.sh
 ```
 ## 重新登入 2/4
 ```
