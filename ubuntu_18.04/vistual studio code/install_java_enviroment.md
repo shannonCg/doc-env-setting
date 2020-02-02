@@ -1,11 +1,11 @@
-# 安裝vistual studio code的java環境建置 步驟
-## 執行安裝vistual studio code(已安裝Java) 1/3
+# 安裝vistual studio code的java開發環境
+## 執行安裝vistual studio code(已安裝Java) 
 [vistual studio code](https://code.visualstudio.com/docs/setup/setup-overview)
 
-## 下載java相關套件 2/3
-### 套件軟體為:
+## 下載java相關套件 
+套件軟體為:
 - Java Extension Pack
 
-## 設定Java環境變數 3/3
+## 設定Java環境變數 
 
 
