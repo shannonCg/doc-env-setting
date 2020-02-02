@@ -80,6 +80,7 @@ $ brew install maven@3.5
 
 ## 安裝IDE: Visual Studio Code 
 安裝Visual Studio Code
+
 [Visual Studio Code下載點](https://code.visualstudio.com/docs/setup/setup-overview)
 
 下載執行Java的套件： 
