@@ -3,5 +3,5 @@
 
 ## 用root權限執行command 
 ```
-$sudo ./install
+$ sudo ./install
 ```

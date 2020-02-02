@@ -1,20 +1,20 @@
 # 安裝docker v19.03
 ## 執行安裝docker 19.03的script 
 ```
-$./docker_19.03_install.sh
+$ ./docker_19.03_install.sh
 ```
 
 ## 重新登入 
 ```
-$logout
+$ logout
 ```
 
 ## 啟動測試用的docker image 
 ```
-$docker run hello-world
+$ docker run hello-world
 ```
 
 ## 查看剛啟動過的docker container
 ```
-$docker ps -a
+$ docker ps -a
 ```
