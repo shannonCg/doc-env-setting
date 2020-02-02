@@ -5,8 +5,6 @@
 ## 下載java相關套件 2/3
 ### 套件軟體為:
 - Java Extension Pack
-  
-![test picture](test.png)
 
 ## 設定Java環境變數 3/3
 
