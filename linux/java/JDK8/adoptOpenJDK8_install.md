@@ -9,7 +9,6 @@ $wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u2
 $sudo cp OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz /opt/
 $cd /opt
 $sudo tar zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz
-$sudo mv shaice:shaice -R jdk8u232-b09
 ```
 
 ## 設定JAVA PATH
@@ -20,7 +19,7 @@ $sudo mv shaice:shaice -R jdk8u232-b09
 2. 把以下內容貼到檔案裡
     ```
     export JAVA_HOME=/opt/jdk8u232-b09
-    export PATH=$JAVA_HOME/bin:$PATH
+    export PATH=$PATH:$JAVA_HOME/bin:
     ```
 3. 重新載入.bash_profile
     ```
