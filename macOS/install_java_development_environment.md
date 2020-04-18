@@ -78,6 +78,40 @@ $ brew install maven@3.5
     ```
     ![check_maven_is_available.png](install_java_development_environment/check_maven_is_available.png)
 
+## 建立git專案的ssh連線
+1. 產生private key
+   ```
+    $ssh-keygen -t rsa -b 4096 "github註冊信箱"
+    > Enter a file in which to save the key (/Users/you/.ssh/id_rsa):  ~/.ssh/git_ssh
+    > Enter passphrase (empty for no passphrase): github登入密碼
+    ```
+2. 建立config檔
+   ```
+   $vi ~/.ssh/config
+   ```
+   ```
+   Host *
+     UseKeychain yes
+     AddKeysToAgent yes
+   Host gitlab.com
+     hostname gitlab.com
+     IdentityFile ~/.ssh/git_ssh
+   Host github.com
+     hostname github.com
+     IdentityFile ~/.ssh/git_ssh
+   ```
+3. 把private key加入到 keychain
+   ```
+   $ssh-add -K ~/.ssh/git_ssh
+   ```
+4. 把public key加入到github/gitlab帳號設定裡
+   複製public key檔案的內容
+   ```
+   $pbcopy < ~/.ssh/git_ssh.pub
+   ```
+   把複製好的內容貼到帳號的ssh設定裡
+
+
 ## 安裝IDE: Visual Studio Code 
 安裝Visual Studio Code
 

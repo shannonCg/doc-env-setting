@@ -8,5 +8,3 @@
    $netstat -nltp
    ```
    ![check_ssh_is_available.png](ssh_install/check_ssh_is_available.png)
-   
-
