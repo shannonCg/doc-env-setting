@@ -16,7 +16,7 @@
         user shaice
         IdentityFile ~/.ssh/ubuntu14_ssh
     ```
-3. 把public key複製到遠端主機的.ssh/authorized_key裡
+3. 把public key複製到遠端主機的.ssh/authorized_keys裡
     ```
     $ssh-copy-id -i ~/.ssh/ubuntu14_ssh ubuntu14
     ```
