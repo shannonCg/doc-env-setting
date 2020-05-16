@@ -67,12 +67,16 @@
    $cd ~/hadoop_practice/shell
    $./max_temperature.sh
    ```
+   執行結果會列印在畫面上
 2. 執行mapreduce任務
    若~/hadoop_practice/output資料夾已經存在，必須先刪除才可正常執行mapreduce任務
    ```
-   $cd git/hadoop_practice
-   $export HADOOP_CLASSPATH=hadoop-example.jar
+   $export HADOOP_CLASSPATH=~/git/hadoop_practice/hadoop-example.jar
    $hadoop mapreduce.MaxTemperature ~/hadoop_practice/ncdc_data/1901.gz ~/hadoop_practice/output
+   ```
+   查看執行結果
+   ```
+   $cat hadoop_practice/output/part-r-00000
    ```
 3. 執行計算結果
    ```
