@@ -76,7 +76,7 @@
    ```
    查看執行結果
    ```
-   $cat hadoop_practice/output/part-r-00000
+   $cat ~/hadoop_practice/output/part-r-00000
    ```
 3. 執行計算結果
    ```
