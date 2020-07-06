@@ -177,7 +177,7 @@
             JobHistoryServer
             ```
         2. 從瀏覽器上查看
-            http://10.211.55.11:19888    
+            http://10.211.55.11:19888
 7. 關閉服務(依序關閉mapreduce jobhistory、yarn、hdfs)
     ```
     $mapred --daemon stop historyserver
