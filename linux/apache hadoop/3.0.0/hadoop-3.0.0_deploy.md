@@ -33,6 +33,7 @@
    $vi .bash_profile
    ```
    ```
+   # set hadoop config directory
    export HADOOP_CONF_DIR=~/hadoop_config
    ```
    ```
