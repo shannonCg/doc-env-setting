@@ -1,4 +1,4 @@
-# 部署kafka 2.6
+# 部署kafka 2.6.0
 ## 部署方式
 1. 單機模式（可直接執行內建的zookeeper)
 2. 集群模式（建議自行安裝zookeeper)

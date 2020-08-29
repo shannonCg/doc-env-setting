@@ -1,4 +1,4 @@
-# 安裝thrift
+# 安裝thrift 0.13.0
 ## 安裝依賴套件
 ```
 $sudo apt-get install automake bison flex g++ git libboost-all-dev libevent-dev libssl-dev libtool make pkg-config

@@ -1,4 +1,4 @@
-# 安裝kafka 2.6
+# 安裝kafka 2.6.0
 ## 下載
 ```
 $wget http://apache.stu.edu.tw/kafka/2.6.0/kafka_2.13-2.6.0.tgz
