@@ -1,4 +1,4 @@
-# hadoop 3.0.0部署
+# 部署hadoop 3.0.0
 ## 設定檔介紹
 1. hadoop的設定檔都是xml格式，而主要的設定檔都放在$HADOOP_HOME下的etc/hadoop中
 2. 主要的設定檔有：
