@@ -1,6 +1,6 @@
 # 安裝gradle
 ## 安裝依賴套件
-- JDK v1.8 or higher(可參考[gradle8 安裝](../JDK8/adoptOpenJDK8_install.md))
+- JDK v1.8 or higher(可參考[JDK8 安裝](../JDK8/adoptOpenJDK8_install.md))
 
 ## 手動下載gradle binary檔案
 ```

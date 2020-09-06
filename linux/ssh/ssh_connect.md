@@ -1,4 +1,4 @@
-# ssh連線
+# ssh連線[要ssh連線方]
 ## 使用免密碼輸入ssh遠端連線
 1. 產生private key
     ```
