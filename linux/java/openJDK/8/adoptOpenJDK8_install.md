@@ -7,15 +7,16 @@ $wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u2
 ## 解壓縮
 ```
 $sudo mv OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz /opt/
-$sudo mkdir /opt/jdk
+$sudo mkdir -p /opt/jdk
 $cd /opt
 $sudo tar zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz -C /opt/jdk
+$sudo chown root:root -R /opt/jdk/jdk8u232-b09
 ```
 
 ## 設定JAVA PATH
 1. 編輯.bash_profile檔案
     ```
-    $ vi ~/.bash_profile
+    $vi ~/.bash_profile
     ```
 2. 把以下內容貼到檔案裡
     ```

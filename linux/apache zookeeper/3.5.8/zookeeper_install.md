@@ -1,6 +1,6 @@
 # 安裝zookeeper 3.5.8
 ## 安裝依賴套件
-- JDK v1.8 or higher(可參考[JDK8 安裝](../../java/JDK8/adoptOpenJDK8_install.md))
+- JDK v1.8 or higher(可參考[JDK8 安裝](../../java/openJDK/8/adoptOpenJDK8_install.md))
 
 ## 下載
 ```

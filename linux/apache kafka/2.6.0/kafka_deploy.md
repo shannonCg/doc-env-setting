@@ -1,76 +1,109 @@
 # 部署kafka 2.6.0
-## 部署方式
-1. 單機模式（可直接執行內建的zookeeper)
-2. 集群模式（建議自行安裝zookeeper)
+## 前置動作
+- [已安裝kafka](kafka_install.md)
 
-## 部署設定
-#### 單機模式
-1. 啟動zookeeper (運行在獨立的shell)
+## 部署方式
+  - [Standalone模式](#standalone模式)
+  - [Clustered模式](#clustered模式三台broker)
+
+## Standalone模式
+1. 建立log檔存放位置的資料夾
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-2.6.0/config/zookeeper.properties
+$sudo mkdir $KAFKA_HOME/logs
+$sudo chmod -R a+w $KAFKA_HOME/logs
 ```
-2. 啟動kafka server(broker) (運行在獨立的shell)
+2. 啟動zookeeper
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-server-start.sh /opt/kafka/kafka_2.13-2.6.0/config/server.properties
+$zookeeper-server-start.sh -daemon $KAFKA_HOME/config/zookeeper.properties
 ```
-3. 建立topic
+3. 啟動kafka server(broker)
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+$kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties
+```
+4. 建立topic
+```
+$kafka-topics.sh --bootstrap-server localhost:9092  --create  --replication-factor 1 --partitions 1 --topic test
 ```
 觀看此broker存在的topic，會發現出現剛建立的topic: test
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+$kafka-topics.sh --bootstrap-server localhost:9092 --list 
 ```
 觀看此broker上的topic資訊
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
+$kafka-topics.sh --bootstrap-server localhost:9092  --describe  --topic test
 ```
-4. 測試傳送訊息到topic，並觀察consumer是否有接收到
+5. 測試傳送訊息到topic，並觀察consumer是否有接收到
 建立producer並傳送訊息到topic: test
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
+$kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
 ```
 ```
-message a
+>message a
 ```
 ```
-message b
+>message b
 ```
 
 建立consumer並從topic: test接收訊息(運行在獨立的shell)
 ```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+$kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
 ![consumer-accept-message.png](kafka_deploy/consumer-accept-message.png)
+6. 刪除topic
+```
+$kafka-topics.sh --bootstrap-server localhost:9092  --delete  --topic test
+```
+7. 停止kafka server(broker)
+```
+$kill -9 $(jps | grep -i Kafka | awk '{print $1}')
+```
+8. 停止zookeeper
+```
+$kill -9 $(jps | grep -i QuorumPeerMain | awk '{print $1}')
+```
 
-#### 集群模式（三台broker）
-1. 設定兩台broker的server.properties
+## Clustered模式（三台broker）
+建議自行安裝zookeeper集群, 可參考[zookeeper 安裝](../../apache%20zookeeper/3.5.8/zookeeper_install.md)和[zookeeper 部署](../../apache%20zookeeper/3.5.8/zookeeper_deploy.md)
+1. 設定設定檔（$KAFKA_HOME/config/server.properties）
 ```
-$cd /opt/kafka/kafka_2.13-2.6.0
-$cp config/server.properties config/server-1.properties
-$cp config/server.properties config/server-2.properties
+$sudo vi $KAFKA_HOME/config/server.properties
 ```
-更改server-1.properties和server-2.properties的broker.id設定
-和listeners的port設定（若broker建立在不同機器上不用改）
-和log.dirs檔案位置（若broker建立在不同機器上不用改）
 ```
-config/server-1.properties:
-    broker.id=1
-    listeners=PLAINTEXT://:9093
-    log.dirs=/tmp/kafka-logs-1
+log.dirs=/opt/kafka/data
+zookeeper.connect=10.211.55.14:2181,10.211.55.15:2181,10.211.55.16:2181
+```
+在10.211.55.18寫
+```
+broker.id=1
+```
+在10.211.55.19寫
+```
+broker.id=2
+```
+在10.211.55.20寫
+```
+broker.id=3
+```
+2. 建立kafka log.dars檔案
+```
+$sudo mkdir -p /opt/kafka/data
+$sudo chown -R shaice:shaice /opt/kafka/data
+```
+3. 啟動zookeeper server
+```
+$zkServer.sh start
+```
+4. 啟動kafka server
+```
+$kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties
+$tail -f $KAFKA_HOME/logs/server.log
+```
+5. 停止kafka server
+```
+$kill -9 $(jps | grep -i Kafka | awk '{print $1}')
+```
+6. 停止zookeeper server
+```
+$zkServer.sh stop
+```
 
-config/server-2.properties:
-    broker.id=2
-    listeners=PLAINTEXT://:9094
-    log.dirs=/tmp/kafka-logs-2
-```
-2. 啟動zookeeper
-```
-$/opt/kafka/kafka_2.13-2.6.0/bin/zookeeper-server-start.sh /opt/kafka/kafka_2.13-2.6.0/config/zookeeper.properties > zookeeper.log &
-```
-3. 啟動kafka server(broker) 
-```
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-server-start.sh -daemon /opt/kafka/kafka_2.13-2.6.0/config/server.properties 
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-server-start.sh -daemon /opt/kafka/kafka_2.13-2.6.0/config/server-1.properties
-$/opt/kafka/kafka_2.13-2.6.0/bin/kafka-server-start.sh -daemon /opt/kafka/kafka_2.13-2.6.0/config/server-2.properties
-```
