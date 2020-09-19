@@ -30,3 +30,7 @@ $sudo tar zxvf kafka_2.13-2.6.0.tgz -C /opt/kafka
     ```
     $source ~/.bash_profile
     ```
+4. 確認版本
+   ```
+   $kafka-server-start.sh --version
+   ```

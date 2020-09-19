@@ -30,3 +30,7 @@ $sudo tar zxvf apache-zookeeper-3.5.8-bin.tar.gz -C /opt/zookeeper
     ```
     $source ~/.bash_profile
     ```
+4. 確認版本
+   ```
+   $zkServer.sh --version
+   ```

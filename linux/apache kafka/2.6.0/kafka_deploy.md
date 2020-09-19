@@ -14,7 +14,7 @@ $sudo chmod -R a+w $KAFKA_HOME/logs
 ```
 2. 啟動zookeeper
 ```
-$zookeeper-server-start.sh -daemon $KAFKA_HOME/config/zookeeper.properties
+$zkServer.sh start
 ```
 3. 啟動kafka server(broker)
 ```
@@ -49,6 +49,18 @@ $kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
 $kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
 ![consumer-accept-message.png](kafka_deploy/consumer-accept-message.png)
+或指定partition
+```
+$kafka-console-consumer.sh --bootstrap-server localhost:9092 --partition 0 --offset "4" --topic test --group test_consumer
+```
+或建立consumer group
+```
+$kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --group test_consumer
+```
+觀看此consumer group資訊
+```
+$kafka-consumer-groups.sh --bootstrap-server localhost:9092  --describe  --group test_consumer
+```
 6. 刪除topic
 ```
 $kafka-topics.sh --bootstrap-server localhost:9092  --delete  --topic test
@@ -57,10 +69,15 @@ $kafka-topics.sh --bootstrap-server localhost:9092  --delete  --topic test
 ```
 $kill -9 $(jps | grep -i Kafka | awk '{print $1}')
 ```
+或
+```
+$jps | grep -i Kafka | awk '{print $1}'| xargs kill -9
+```
 8. 停止zookeeper
 ```
-$kill -9 $(jps | grep -i QuorumPeerMain | awk '{print $1}')
+$zkServer.sh stop
 ```
+
 
 ## Clustered模式（三台broker）
 建議自行安裝zookeeper集群, 可參考[zookeeper 安裝](../../apache%20zookeeper/3.5.8/zookeeper_install.md)和[zookeeper 部署](../../apache%20zookeeper/3.5.8/zookeeper_deploy.md)
@@ -75,14 +92,17 @@ zookeeper.connect=10.211.55.14:2181,10.211.55.15:2181,10.211.55.16:2181
 在10.211.55.18寫
 ```
 broker.id=1
+listeners=PLAINTEXT://10.211.55.18:9092
 ```
 在10.211.55.19寫
 ```
 broker.id=2
+listeners=PLAINTEXT://10.211.55.19:9092
 ```
 在10.211.55.20寫
 ```
 broker.id=3
+listeners=PLAINTEXT://10.211.55.20:9092
 ```
 2. 建立kafka log.dars檔案
 ```
@@ -102,8 +122,11 @@ $tail -f $KAFKA_HOME/logs/server.log
 ```
 $kill -9 $(jps | grep -i Kafka | awk '{print $1}')
 ```
+或
+```
+$jps | grep -i Kafka | awk '{print $1}'| xargs kill -9
+```
 6. 停止zookeeper server
 ```
 $zkServer.sh stop
 ```
-
