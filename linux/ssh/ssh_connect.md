@@ -2,7 +2,7 @@
 ## 使用免密碼輸入ssh遠端連線
 1. 產生private key
     ```
-    $ssh-keygen -t rsa -b 4096 "shaice@ubuntu.com"
+    $ssh-keygen -t rsa -b 4096 -C "shaice@ubuntu.com"
     > Enter a file in which to save the key (/Users/you/.ssh/id_rsa): ~/.ssh/ubuntu14_ssh
     ```
 2. 在~/.ssh資料夾下建立config檔案
