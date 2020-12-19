@@ -28,7 +28,7 @@
    keychain git_ssh
    . ~/.keychain/`uname -n`-sh
    ```
-   重載設定
+   3. 重載設定
    ```
    $source ~/.bashrc
    ```
