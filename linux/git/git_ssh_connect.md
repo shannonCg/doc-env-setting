@@ -19,11 +19,11 @@
       IdentityFile ~/.ssh/git_ssh
    ```
 4. 把private key加入到 keychain
-   下載keychain
+   1. 下載keychain
    ```
    $sudo apt-get install keychain
    ```
-   在$HOME/.bashrc檔加入下列設定
+   2. 在$HOME/.bashrc檔加入下列設定
    ```
    keychain git_ssh
    . ~/.keychain/`uname -n`-sh

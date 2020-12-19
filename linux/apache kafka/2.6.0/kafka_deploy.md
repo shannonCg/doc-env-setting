@@ -51,15 +51,23 @@ $kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from
 ![consumer-accept-message.png](kafka_deploy/consumer-accept-message.png)
 或指定partition
 ```
-$kafka-console-consumer.sh --bootstrap-server localhost:9092 --partition 0 --offset "4" --topic test --group test_consumer
+$kafka-console-consumer.sh --bootstrap-server localhost:9092 --partition 0 --offset "4" --topic test
 ```
 或建立consumer group
 ```
 $kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --group test_consumer
 ```
+觀看此broker存在的topic，會發現出現剛建立的topic: test
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+```
 觀看此consumer group資訊
 ```
 $kafka-consumer-groups.sh --bootstrap-server localhost:9092  --describe  --group test_consumer
+```
+刪除此consumer group
+```
+$kafka-consumer-groups.sh --bootstrap-server localhost:9092  --delete  --group test_consumer
 ```
 6. 刪除topic
 ```
