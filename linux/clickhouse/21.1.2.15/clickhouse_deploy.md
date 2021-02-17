@@ -1,6 +1,6 @@
 # 部署clickhouse 21.1.2.15
 ## 前置動作
-- [已安裝clickhouse](./cliclhouse_install.md)
+- [已安裝clickhouse](clickhouse_install.md)
 
 ## 部署方式
   - [Standalone模式](#standalone模式)
