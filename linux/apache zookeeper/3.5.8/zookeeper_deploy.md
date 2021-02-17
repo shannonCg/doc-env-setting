@@ -94,11 +94,16 @@ $vi /opt/zookeeper/data/myid
 ```
 3
 ```
-3. 啟動zookeeper server
+3. 建立log檔存放位置的資料夾
+```
+$sudo mkdir $ZOOKEEPER_HOME/logs
+$sudo chmod -R a+w $ZOOKEEPER_HOME/logs
+```
+4. 啟動zookeeper server
 ```
 $zkServer.sh start
 ```
-4. 停止zookeeper server
+5. 停止zookeeper server
 ```
 $zkServer.sh stop
 ```

@@ -1,11 +1,11 @@
 # Apache Kafka介紹
 ## 定位
-訊息隊列系統
+分散式流式平台
 
 ## 主要特色
-- 分散式系統
-- 訊息可備份
+- 消息系統
 - 訊息可持久化（因此可做到資料流回放）
+- 支援流式處理框架
 
 ## 架構
 ![kafka_structor.png](kafka_intro/kafka_structor.png)
