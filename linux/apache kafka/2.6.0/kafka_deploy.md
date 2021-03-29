@@ -128,6 +128,10 @@ $tail -f $KAFKA_HOME/logs/server.log
 ```
 5. 停止kafka server
 ```
+$kafka-server-stop.sh
+```
+或
+```
 $kill -9 $(jps | grep -i Kafka | awk '{print $1}')
 ```
 或
