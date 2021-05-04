@@ -25,6 +25,9 @@
    ```
    2. 在$HOME/.bashrc檔加入下列設定
    ```
+   $vi ~/.bashrc
+   ```
+   ```
    keychain git_ssh
    . ~/.keychain/`uname -n`-sh
    ```
