@@ -7,3 +7,7 @@ $java -XX:+PrintCommandLineFlags -version
 ```
 $java -XX:+PrintGCDetails -version
 ```
+### 列出jar包中的文件清单
+```
+$jar tf test-0.0.1-SNAPSHOT.jar
+```
