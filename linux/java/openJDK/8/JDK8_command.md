@@ -11,3 +11,7 @@ $java -XX:+PrintGCDetails -version
 ```
 $jar tf test-0.0.1-SNAPSHOT.jar
 ```
+### 解析出jar包中的文件
+```
+$jar xf finance-1.0.0.jar BOOT-INF/classes/application.yml
+```
