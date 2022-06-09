@@ -10,7 +10,7 @@ $sudo mv OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz /opt/
 $sudo mkdir -p /opt/jdk
 $cd /opt
 $sudo tar zxvf OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz -C /opt/jdk
-$sudo mv jdk-11.0.8+10/ jdk-11.0.8
+$sudo mv jdk/jdk-11.0.8+10 jdk/jdk-11.0.8
 ```
 
 ## 設定JAVA PATH
