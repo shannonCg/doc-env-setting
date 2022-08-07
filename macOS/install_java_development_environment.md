@@ -10,14 +10,14 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ## 用homebrew安裝OpenJDK 8
 尋找可下載的openJDK8
 ```
+$ brew tap AdoptOpenJDK/openjdk
 $ brew search openJDK
 ```
 ![search_openJDK.png](install_java_development_environment/search_openJDK.png)
 
 透過brew cask來安裝adoptopenjdk8
 ```
-$ brew tap AdoptOpenJDK/openjdk
-$ brew cask install adoptopenjdk8
+$ brew install --cask adoptopenjdk8
 ```
 
 設定java環境變數
