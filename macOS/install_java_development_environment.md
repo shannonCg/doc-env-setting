@@ -64,7 +64,7 @@ $ brew install maven@3.5
     ```
 2. 把以下內容貼到檔案裡
     ```
-    export MAVEN_HOME=/usr/local/opt/maven@3.5
+    export MAVEN_HOME=/usr/local/opt/maven
 
     export PATH=$MAVEN_HOME/bin:$PATH
     ```
