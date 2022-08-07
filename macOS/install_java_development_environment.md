@@ -52,9 +52,9 @@ $ brew search maven
 ```
 ![search_maven.png](install_java_development_environment/search_maven.png)
 
-透過brew來安裝maven 3.5
+透過brew來安裝maven
 ```
-$ brew install maven@3.5
+$ brew install maven
 ```
 
 設定maven環境變數
