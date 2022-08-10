@@ -78,6 +78,20 @@ $ brew install maven
     ```
     ![check_maven_is_available.png](install_java_development_environment/check_maven_is_available.png)
 
+建立ll的別名
+1. 編輯zprofile檔案
+    ```
+    $ vi ~/.zprofile
+    ```
+2. 把以下內容貼到檔案裡
+    ```
+    alias ll='ls -alF'
+    ```
+3. 重新載入zprofile
+    ```
+    $ source ~/.zprofile
+    ```
+
 ## 建立git專案的ssh連線
 1. 產生private key
    ```
