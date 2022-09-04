@@ -1,4 +1,4 @@
-# 安裝軟體開發環境
+# 軟體開發環境設定
 ## 建立檔案搜尋列表的別名
 1. 編輯zprofile檔案
     ```
@@ -58,3 +58,12 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 安裝Visual Studio Code
 
 [Visual Studio Code下載點](https://code.visualstudio.com/docs/setup/setup-overview)
+
+安裝常用套件
+- Markdown
+    ![Markdown All in One.png](install_dev_env/Markdown%20All%20in%20One.png)
+    ![Markdown Preview Enhanced.png](install_dev_env/Markdown%20Preview%20Enhanced.png)
+
+## 各程式語言開發環境設定
+[springboot專案開發環境設定](install_java_dev_env.md)
+[angular專案開發環境設定](install_angular_dev_env.md)

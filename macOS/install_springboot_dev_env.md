@@ -1,6 +1,6 @@
-# 安裝Java開發環境
-## 開發環境建置
-[安裝軟體開發環境](install_dev_env.md)
+# Springboot專案開發環境設定
+## 前置開發環境設定
+[軟體開發環境設定](install_dev_env.md)
 
 ## 用homebrew安裝OpenJDK 8
 尋找可下載的openJDK8
@@ -8,7 +8,7 @@
 $ brew tap AdoptOpenJDK/openjdk
 $ brew search openJDK
 ```
-![search_openJDK.png](install_java_dev_env/search_openJDK.png)
+![search_openJDK.png](install_springboot_dev_env/search_openJDK.png)
 
 透過brew cask來安裝adoptopenjdk8
 ```
@@ -38,7 +38,7 @@ $ brew install --cask adoptopenjdk8
     ```
     $ java -version
     ```
-    ![check_java_is_available.png](install_java_dev_env/check_java_is_available.png)
+    ![check_java_is_available.png](install_springboot_dev_env/check_java_is_available.png)
 
 ## 用homebrew安裝Maven
 透過brew來安裝maven
@@ -65,15 +65,12 @@ $ brew install maven
     ```
     $ maven -version
     ```
-    ![check_maven_is_available.png](install_java_dev_env/check_maven_is_available.png)
+    ![check_maven_is_available.png](install_springboot_dev_env/check_maven_is_available.png)
 
 ## Visual Studio Code安裝Java專案開發套件
 - Java Extension Pack
-    ![download_Java Extension Pack.png](install_java_dev_env/download_Java%20Extension%20Pack.png)
-- Markdown
-    ![Markdown All in One.png](install_java_dev_env/Markdown%20All%20in%20One.png)
-    ![Markdown Preview Enhanced.png](install_java_dev_env/Markdown%20Preview%20Enhanced.png)
+    ![download_Java Extension Pack.png](install_springboot_dev_env/download_Java%20Extension%20Pack.png)
 - Restful api test
-    ![REST Client.png](install_java_dev_env/REST%20Client.png)
-- Angular
-    ![Markdown Preview Enhanced.png](install_java_dev_env/Markdown%20Preview%20Enhanced.png)
+    ![REST Client.png](install_springboot_dev_env/REST%20Client.png)
+- Springboot
+    ![Springboot.png](install_springboot_dev_env/Springboot.png)
