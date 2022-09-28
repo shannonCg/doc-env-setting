@@ -1,4 +1,4 @@
-# 部署clickhouse 21.1.2.15
+# 部署clickhouse 22.3.2.2
 ## 前置動作
 - [已安裝clickhouse](clickhouse_install.md)
 
@@ -22,7 +22,7 @@ sudo vi /etc/clickhouse-server/config.xml
 
 <listen_host>0.0.0.0</listen_host>
 
-<path>/opt/clickhouse/</path>
+<path>/opt/clickhouse22/</path>
 <tmp_path>/opt/clickhouse/tmp/</tmp_path>
 <user_files_path>/opt/clickhouse/user_files/</user_files_path>
 
