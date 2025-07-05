@@ -1,44 +1,9 @@
 # Springboot專案開發環境設定
 ## 前置開發環境設定
-[軟體開發環境設定](install_dev_env.md)
+[軟體開發環境設定](./install_dev_env.md)
 
-## 用homebrew安裝OpenJDK 8
-尋找可下載的openJDK8
-```
-$ brew tap AdoptOpenJDK/openjdk
-$ brew search openJDK
-```
-![search_openJDK.png](install_springboot_dev_env/search_openJDK.png)
-
-透過brew cask來安裝adoptopenjdk8
-```
-$ brew install --cask adoptopenjdk8
-```
-
-## 設定java環境變數
-1. 編輯zprofile檔案
-    ```
-    $ vi ~/.zprofile
-    ```
-2. 把以下內容貼到檔案裡
-    ```
-    export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-    alias java8='export JAVA_HOME=$JAVA_8_HOME'
-    
-    # default to Java 8
-    java8
-
-    export PATH=$JAVA_HOME/bin:$PATH
-    ```
-3. 重新載入zprofile
-    ```
-    $ source ~/.zprofile
-    ```
-4. 驗證java是否有安裝成功
-    ```
-    $ java -version
-    ```
-    ![check_java_is_available.png](install_springboot_dev_env/check_java_is_available.png)
+## 安裝Java
+[安裝OpenJDK](./install_java_env.md)
 
 ## 用homebrew安裝Maven
 透過brew來安裝maven

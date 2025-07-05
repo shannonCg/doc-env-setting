@@ -65,5 +65,5 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
     ![Markdown Preview Enhanced.png](install_dev_env/Markdown%20Preview%20Enhanced.png)
 
 ## 各程式語言開發環境設定
-[springboot專案開發環境設定](install_java_dev_env.md)
+[springboot專案開發環境設定](install_springboot_dev_env.md)
 [angular專案開發環境設定](install_angular_dev_env.md)
