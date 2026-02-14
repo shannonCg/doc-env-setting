@@ -23,7 +23,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ## 建立git專案的ssh連線
 1. 產生private key
    ```
-    $ssh-keygen -t rsa -b 4096 "github註冊信箱"
+    $ssh-keygen -t ed25519 -C "github註冊信箱"
     > Enter a file in which to save the key (/Users/you/.ssh/id_rsa):  ~/.ssh/git_ssh
     > Enter passphrase (empty for no passphrase): github登入密碼
     ```
