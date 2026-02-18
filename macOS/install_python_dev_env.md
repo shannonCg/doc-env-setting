@@ -6,4 +6,4 @@ brew install python3
 ```
 
 ## IDE套件安裝
-- VS Code Python extension 
+- Python 

@@ -27,7 +27,7 @@ $ brew install maven
     ```
 4. 驗證maven是否有安裝成功
     ```
-    $ maven -version
+    $ mvn -version
     ```
     ![check_maven_is_available.png](install_springboot_dev_env/check_maven_is_available.png)
 
