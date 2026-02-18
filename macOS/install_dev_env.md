@@ -59,11 +59,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 [Visual Studio Code下載點](https://code.visualstudio.com/docs/setup/setup-overview)
 
-安裝常用套件
-- Markdown
-    ![Markdown All in One.png](install_dev_env/Markdown%20All%20in%20One.png)
-    ![Markdown Preview Enhanced.png](install_dev_env/Markdown%20Preview%20Enhanced.png)
-
 ## 各程式語言開發環境設定
-[springboot專案開發環境設定](install_springboot_dev_env.md)
-[angular專案開發環境設定](install_angular_dev_env.md)
+[Springboot專案開發環境設定](install_springboot_dev_env.md)
+[Angular專案開發環境設定](install_angular_dev_env.md)
+[Python專案開發環境設定](install_python_dev_env.md)

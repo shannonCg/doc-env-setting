@@ -5,13 +5,12 @@
 ## 安裝Java
 [安裝OpenJDK](./install_java_env.md)
 
-## 用homebrew安裝Maven
-透過brew來安裝maven
+## 安裝Maven
+用homebrew安裝Maven
 ```
 $ brew install maven
 ```
-
-## 設定maven環境變數
+設定maven環境變數
 1. 編輯zprofile檔案
     ```
     $ vi ~/.zprofile
@@ -32,7 +31,8 @@ $ brew install maven
     ```
     ![check_maven_is_available.png](install_springboot_dev_env/check_maven_is_available.png)
 
-## Visual Studio Code安裝Java專案開發套件
+## IDE套件安裝
+### Visual Studio Code安裝Java專案開發套件
 - Java Extension Pack
     ![download_Java Extension Pack.png](install_springboot_dev_env/download_Java%20Extension%20Pack.png)
 - Restful api test
